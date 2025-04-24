@@ -1,52 +1,81 @@
-
 <div class="row container">
-    <div class="col-6">
-        <img src="https://cdn.dribbble.com/userupload/23953319/file/original-ba7ae68ad2701a19c81533bc2b832080.gif" alt="" width="100%" >
-    </div>
-    <div class="col-6">
-        <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-             <h1 class="text-success">Register Form</h1>
-            <div class="row mb-4">
-              <div class="col">
-                <div data-mdb-input-init class="form-outline">
-                  <input type="text" id="form3Example1" class="form-control" />
-                  <label class="form-label" for="form3Example1">First name</label>
-                </div>
-              </div>
-              <div class="col">
-                <div data-mdb-input-init class="form-outline">
-                  <input type="text" id="form3Example2" class="form-control" />
-                  <label class="form-label" for="form3Example2">Last name</label>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Email input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control" />
-              <label class="form-label" for="form3Example3">Email address</label>
-            </div>
-          
-            <!-- Password input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control" />
-              <label class="form-label" for="form3Example4">Password</label>
-            </div>
-          
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-              <label class="form-check-label" for="form2Example33">
-                Subscribe to our newsletter
-              </label>
-            </div>
-          
-            <!-- Submit button -->
-            <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
-          
-            <!-- Register buttons -->
-           
-          </form>
-    </div>
+  <div class="col-6">
+    <img
+      src="https://cdn.dribbble.com/userupload/23953319/file/original-ba7ae68ad2701a19c81533bc2b832080.gif"
+      alt=""
+      width="100%"
+    />
+  </div>
+  <div class="col-6">
+    <form>
+      <!-- 2 column grid layout with text inputs for the first and last names -->
+      <h1 class="text-primary">Register Form</h1>
+      <div class="row mb-4">
+        <div class="col">
+          <div data-mdb-input-init class="form-outline">
+            <input
+              (change)="onFirstNameChange($event)"
+              type="text"
+              id="form3Example1"
+              class="form-control"
+            />
+            <label class="form-label" for="form3Example1">First name</label>
+          </div>
+        </div>
+        <div class="col">
+          <div data-mdb-input-init class="form-outline">
+            <input
+              #lastName
+              name="lastName"
+              type="text"
+              id="form3Example2"
+              class="form-control"
+            />
+            <label class="form-label" for="form3Example2">Last name</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email" id="form3Example3" class="form-control" />
+        <label class="form-label" for="form3Example3">Email address</label>
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="form3Example4" class="form-control" />
+        <label class="form-label" for="form3Example4">Password</label>
+      </div>
+
+      <div class="mb-4">
+        <a routerLink="/login">
+          <button class="btn btn-primary">
+            Already have an account ? Login Here
+          </button>
+        </a>
+      </div>
+
+      <!-- Submit button -->
+      <button
+        data-mdb-ripple-init
+        type="button"
+        class="btn btn-primary btn-block mb-4"
+        (click)="register()"
+      >
+        Sign up
+      </button>
+      <button
+        data-mdb-ripple-init
+        type="button"
+        class="btn btn-primary btn-block mb-4"
+        (click)="lastNameClick(lastName)"
+      >
+        Sign up
+      </button>
+      <!-- Register buttons -->
+    </form>
+    <h1>{{firstName}}</h1>
+    <h2>{{LastName}}</h2>
+  </div>
 </div>
